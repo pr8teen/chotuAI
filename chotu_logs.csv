@@ -1,0 +1,30 @@
+2025-07-09T03:13:17.452199,how many levis tshirt do we have? how can we improve,"(psycopg2.errors.SyntaxError) syntax error at or near ""To""
+LINE 3: To improve, consider adding a constraint to ensure that the ...
+        ^
+
+[SQL: SELECT COUNT(*) FROM t_shirts WHERE brand = 'Levi' AND stock_quantity > 0; 
+
+To improve, consider adding a constraint to ensure that the quantity in stock is not zero for Levi's T-shirts. You could also add an index on the brand column to speed up queries like this one.]
+(Background on this error at: https://sqlalche.me/e/20/f405)"
+2025-07-09T03:14:33.314566,how many levis tshirt do we have? should be buy more or less for next month according to sales,"(psycopg2.errors.UndefinedColumn) column ""sales"" does not exist
+LINE 3: SELECT SUM(CASE WHEN sales > (price * 0.1) THEN 1 ELSE 0 END...
+                             ^
+
+[SQL: SELECT COUNT(*) FROM t_shirts WHERE brand = 'Levi' AND stock_quantity > 0; 
+
+SELECT SUM(CASE WHEN sales > (price * 0.1) THEN 1 ELSE 0 END) FROM t_shirts WHERE brand = 'Levi';]
+(Background on this error at: https://sqlalche.me/e/20/f405)"
+2025-07-09T03:20:31.729745,how many levis t-shirt do we have? can we improve sales by buying more levis?,"(psycopg2.errors.UndefinedColumn) column ""t_shirt_id"" does not exist
+LINE 3: SELECT SUM(CASE WHEN t_shirt_id IN (SELECT t_shirt_id FROM d...
+                             ^
+
+[SQL: SELECT COUNT(*) FROM t_shirts WHERE brand = 'Levi' AND stock_quantity > 0; 
+
+SELECT SUM(CASE WHEN t_shirt_id IN (SELECT t_shirt_id FROM discounts) THEN price * 0.9 ELSE 0 END) - SUM(price) AS improvement]
+(Background on this error at: https://sqlalche.me/e/20/f405)"
+2025-07-09T03:21:19.448324,how many shoes do we have? what are they?,"(psycopg2.errors.GroupingError) column ""t_shirts.t_shirt_id"" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: SELECT COUNT(*) ,  t_shirt_id FROM t_shirts WHERE size = 'S'
+                           ^
+
+[SQL: SELECT COUNT(*) ,  t_shirt_id FROM t_shirts WHERE size = 'S']
+(Background on this error at: https://sqlalche.me/e/20/f405)"
