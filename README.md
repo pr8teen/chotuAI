@@ -201,17 +201,17 @@ Then maybe… we did something right. 💫
 git clone https://github.com/yourusername/chotu-ai
 cd chotu-ai
 
+# Make/Connect your Database
 # Add a .env file like:
-# DB_USER=postgres
-# DB_PASSWORD=yourpass
-# DB_NAME=atliq_tshirts
-# DB_HOST=localhost
+# DB_USER=
+# DB_PASSWORD=
+# DB_NAME=
+# DB_HOST=
 
-# Run llama3.2 using Ollama
-ollama run llama3
+# Run llama using Ollama (any llama model you like)
+ollama run llama2
 
 # Then run Chotu
 streamlit run main.py
-
 
 ---
